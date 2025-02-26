@@ -50,15 +50,15 @@
     },
     {
       "step": "writeFile",
-      "path": "/wordpress/wp-content/plugins/rdb-airtable.php",
+      "path": "/wordpress/wp-content/plugins/rdb-example.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/rdb-airtable.php"
+        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/rdb-example.php"
       }
     },
     {
       "step": "activatePlugin",
-      "pluginPath": "rdb-airtable.php"
+      "pluginPath": "rdb-example.php"
     },
     {
       "step": "importWxr",
