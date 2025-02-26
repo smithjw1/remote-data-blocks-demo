@@ -95,9 +95,11 @@ function register_airtable_data_source(): void
         $result['uuid']
     ));
 
+    /*
     // Register Airtable-specific blocks
     AirtableIntegration::register_blocks_for_airtable_data_source($result);
     AirtableIntegration::register_loop_blocks_for_airtable_data_source($result);
+    */
 }
 
 // Register the data source when WordPress initializes
