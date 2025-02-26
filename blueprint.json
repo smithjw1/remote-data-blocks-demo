@@ -57,11 +57,8 @@
       }
     },
     {
-      "step": "importWordPressFiles",
-      "wordPressFilesZip": {
-        "resource": "url",
-        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/rdb-playground.zip"
-      }
+      "step": "activatePlugin",
+      "pluginPath": "rdb-airtable.php"
     },
     {
       "step": "importWxr",
