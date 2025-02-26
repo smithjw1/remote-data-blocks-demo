@@ -49,6 +49,18 @@
       "pluginPath": "api-monster.php"
     },
     {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/plugins/rdb-airtable.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/rdb-airtable.php"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "rdb-airtable.php"
+    },
+    {
       "step": "importWxr",
       "file": {
         "resource": "url",
