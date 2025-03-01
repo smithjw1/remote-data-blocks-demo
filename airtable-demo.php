@@ -20,7 +20,7 @@ use RemoteDataBlocks\Integrations\Airtable\AirtableIntegration;
 function register_airtable_academy_award_block(): void
 {
 
-    $access_token = base64_encode('cGF0YXRRMVZzb3M5dWRsVjQuYmZjZmU3ZThjYmQ0OGMyOTIxMzFmMmIxMzgyOWFiY2ViMTkyMGZjOGY4NGM3YjAwZWZhZDlkMDdmNDIzMjI1OQ==');
+    $access_token = base64_decode('cGF0YXRRMVZzb3M5dWRsVjQuYmZjZmU3ZThjYmQ0OGMyOTIxMzFmMmIxMzgyOWFiY2ViMTkyMGZjOGY4NGM3YjAwZWZhZDlkMDdmNDIzMjI1OQ==');
     $base_id = 'appHWR6MHe90igNWN'; // Airtable base ID
     $table_id = 'tblGtk5XwzXMG70Ci'; // Airtable table ID
 
