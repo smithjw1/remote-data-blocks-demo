@@ -89,7 +89,7 @@
     },
     {
       "step": "activatePlugin",
-      "pluginPath": "shopify-demo.php"
+      "pluginPath": "shopify-demo/shopify-demo.php"
     }
   ]
 }
