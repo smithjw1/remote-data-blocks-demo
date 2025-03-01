@@ -50,15 +50,15 @@
     },
     {
       "step": "writeFile",
-      "path": "/wordpress/wp-content/plugins/rdb-example.php",
+      "path": "/wordpress/wp-content/plugins/airtable-demo.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/rdb-example.php"
+        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/airtable-demo.php"
       }
     },
     {
       "step": "activatePlugin",
-      "pluginPath": "rdb-example.php"
+      "pluginPath": "airtable-demo.php"
     },
     {
       "step": "importWxr",
@@ -66,6 +66,30 @@
         "resource": "url",
         "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/content.xml"
       }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/plugins/shopify-demo"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/plugins/shopify-demo/ExampleShopifyDataSource.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/shopify-demo/ExampleShopifyDataSource.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/plugins/shopify-demo/shopify-demo.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/smithjw1/remote-data-blocks-demo/trunk/shopify-demo/shopify-demo.php"
+      }
+    },
+    {
+      "step": "activatePlugin",
+      "pluginPath": "shopify-demo.php"
     }
   ]
 }
