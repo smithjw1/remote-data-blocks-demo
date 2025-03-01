@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 /**
- * Plugin Name: Airtable RDB Integration Example
- * Description: Creates an Airtable data source using Remote Data Blocks
+ * Plugin Name: Airtable RDB Integration
+ * Description: Creates a custom block to be used with Remote Data Blocks to display Airtable records
  * Author: WPVIP
  * Author URI: https://remotedatablocks.com/
  * Text Domain: remote-data-blocks
@@ -12,23 +12,20 @@ declare(strict_types=1);
  * Requires Plugins: remote-data-blocks
  */
 
-namespace RemoteDataBlocks\Example\Airtable;
+namespace RemoteDataBlocks\Example\Airtable\AcademyAward;
 
-use RemoteDataBlocks\Store\DataSource\DataSourceConfigManager;
+use RemoteDataBlocks\Integrations\Airtable\AirtableDataSource;
 use RemoteDataBlocks\Integrations\Airtable\AirtableIntegration;
-use function is_wp_error;
-use function add_action;
-use function error_log;
 
-function register_airtable_data_source(): void
+function register_airtable_academy_award_block(): void
 {
+
     $access_token = 'patatQ1Vsos9udlV4.bfcfe7e8cbd48c292131f2b13829abceb1920fc8f84c7b00efad9d07f4232259';
     $base_id = 'appHWR6MHe90igNWN'; // Airtable base ID
     $table_id = 'tblGtk5XwzXMG70Ci'; // Airtable table ID
 
-    // Define the Airtable configuration
-    $data_source_config = [
-        'service' => 'airtable',
+    // Define the data source
+    $airtable_data_source = AirtableDataSource::from_array([
         'service_config' => [
             '__version' => 1,
             'access_token' => $access_token,
@@ -76,29 +73,10 @@ function register_airtable_data_source(): void
                 ],
             ],
         ],
-    ];
+    ]);
 
-    // Create the data source
-    $result = DataSourceConfigManager::create($data_source_config);
-
-    if (is_wp_error($result)) {
-        error_log(sprintf(
-            'Failed to create Airtable data source: %s',
-            $result->get_error_message()
-        ));
-        return;
-    }
-
-    // Log success
-    error_log(sprintf(
-        'Successfully created Airtable data source with UUID: %s',
-        $result['uuid']
-    ));
-
-    // Register Airtable-specific blocks
-    AirtableIntegration::register_blocks_for_airtable_data_source($result);
-    AirtableIntegration::register_loop_blocks_for_airtable_data_source($result);
+    AirtableIntegration::register_blocks_for_airtable_data_source($airtable_data_source);
+    AirtableIntegration::register_loop_blocks_for_airtable_data_source($airtable_data_source);
 }
 
-// Register the data source when WordPress initializes
-add_action('init', __NAMESPACE__ . '\\register_airtable_data_source');
+add_action('init', __NAMESPACE__ . '\\register_airtable_academy_award_block');
